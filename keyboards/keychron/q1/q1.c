@@ -58,10 +58,11 @@ static uint8_t light_brightness_get(void) {
 }
 
 void rgb_matrix_indicators_kb(void) {
-    if (host_keyboard_led_state().caps_lock) {
-        uint8_t v = light_brightness_get();
-        rgb_matrix_set_color(CAPS_LOCK_LED_INDEX, v, v, v); // white, with the adjusted brightness
-    }
+    // disable default caps lock indicator
+    // if (host_keyboard_led_state().caps_lock) {
+    //     uint8_t v = light_brightness_get();
+    //     rgb_matrix_set_color(CAPS_LOCK_LED_INDEX, v, v, v); // white, with the adjusted brightness
+    // }
 }
 
 void rgb_matrix_indicators_none_kb(void) {
